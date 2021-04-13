@@ -12,12 +12,12 @@ server.get('/', async function(request, response) {
     response.json(contatos);
 })
 
-// localhost:3000/123o9123-123-1-1231233
-// server.get('/:id', function(request, response) {
-//     const id = request.params.id;
-//     const result = contatos.filter(contato => contato.id ==  id);
-//     response.json(result);
-// })
+// localhost:3000/1
+server.get('/:id', async function(request, response) {
+    const id = request.params.id;
+    const contato = await database.find(id);
+    response.json(contato);
+})
 
 // localhost:3000/
 server.post('/', async function(request, response) {
