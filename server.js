@@ -1,9 +1,11 @@
 const express = require('express'); // import express; using express;
 const server = express();
+const cors = require('cors');
 
 const database = require('./database');
 
 // middleware
+server.use(cors())
 server.use(express.json())
 
 // localhost:3000/
